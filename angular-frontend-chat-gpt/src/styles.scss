@@ -1,0 +1,94 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: "MyFont";
+  src: url("./assets/bitsumishi/bitsumis.ttf");
+}
+
+* {
+  font-family: "MyFont";
+}
+
+.main-container {
+  width: 40%;
+  text-align: center;
+  margin: auto;
+
+  img {
+    margin: 5%;
+  }
+}
+
+.flex-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #c12526;
+  flex-wrap: wrap;
+  border-radius: 3%;
+  padding: 2%;
+}
+
+.flex-container > div {
+  padding: 1%;
+  display: flex;
+  align-items: center;
+  background-color: #f1f1f1;
+  margin: 10px;
+  font-size: 20px;
+  cursor: pointer;
+  height: 200px;
+  width: 200px;
+  border-radius: 3%;
+  opacity: 0.8;
+  transition: transform 0.5s, box-shadow 0.5s, opacity 0.5s;
+}
+
+.flex-container > div:hover {
+  transform: translateY(-5%);
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  opacity: 1;
+}
+
+.dialog-question-box {
+  visibility: hidden;
+
+  h1 {
+    z-index: 2;
+    width: 100vh;
+    height: 100vh;
+    background-color: grey;
+    color: white;
+    position: absolute !important;
+    top: 50% !important;
+    width: 50% !important;
+  }
+}
+
+.tabs-links-group {
+  display: flex;
+}
+
+.tabs-links-group .questions-backbase-tab {
+  justify-content: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  opacity: 0.5;
+  transition: opacity 0.5s;
+  cursor: pointer;
+}
+
+.tabs-links-group .questions-backbase-tab:hover,
+.tabs-links-group .questions-backbase-tab:focus,
+.tabs-links-group .questions-backbase-tab:active,
+.tabs-links-group .questions-backbase-tab:checked {
+  opacity: 1;
+}
+
+#dialog-question-box {
+  font-size: 10px !important;
+  background-color: lightgray;
+  padding: 3%;
+  margin-bottom: 3%;
+}

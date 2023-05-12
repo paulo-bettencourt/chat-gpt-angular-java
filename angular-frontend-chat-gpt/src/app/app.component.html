@@ -1,0 +1,73 @@
+<!--
+<div>
+  <input
+    [(ngModel)]="inputData"
+    placeholder="Type your message here..."
+  />
+
+  <button (click)="submit()">Submit</button>
+</div>
+-->
+
+<div class="main-container">
+  <img
+    src="../assets/images/bb-logo.png"
+    alt=""
+  >
+
+
+  <div class="tabs-container">
+    <div class="tabs-links-group">
+      <div
+        class="general-questions questions-backbase-tab"
+        (click)="chooseTab('general')"
+      >General Questions</div>
+      <div
+        class="product-questions questions-backbase-tab"
+        (click)="chooseTab('product')"
+      >Product Questions</div>
+      <div
+        class="chat-gpt-questions questions-backbase-tab"
+        (click)="chooseTab('chat-gpt')"
+      >Chat GPT Questions</div>
+    </div>
+    <div *ngIf="response">
+      <div id="dialog-question-box">
+        <h1>{{ response.choices[0].text }}</h1>
+      </div>
+    </div>
+    <div [ngSwitch]="backbaseQuestionsSwitch">
+      <div
+        class="main"
+        *ngSwitchCase="'general-questions'"
+      >
+        <div class="flex-container">
+          <div *ngFor="let question of arrayGeneralQuestionsBackbase">
+            <div (click)="submit(question.question)">{{question.question}}</div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="main"
+        *ngSwitchCase="'product-questions'"
+      >
+        <div class="flex-container">
+          <div *ngFor="let question of arrayProductQuestionsBackbase">
+            <div (click)="submit(question.question)">{{question.question}}</div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="main"
+        *ngSwitchCase="'chat-gpt'"
+      >
+        <div class="flex-container">
+          <div *ngFor="let question of arrayChatGptQuestionsBackbase">
+            <div (click)="submit(question)">{{question}}</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
